@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <string.h>
+
+void funcionDesmenbrar(char *nome)
+{
+    int i;
+    int len = strlen (nome);
+    printf("--------------------------------\n\t");
+    for (i = 0; i < len; i++)
+    {
+      if (nome[i] == ' ')
+	{
+	  printf ("%2d ->>>>>>>>>>>>>>>>>>>>>>>>>> * \n\t", i);
+	}
+      else
+	printf ("%2d ->>>>>>>>>>>>>>>>>>>>>>>>>> %c\n\t", i, nome[i]);
+    }
+}
+
+int strcountc(char *str, char ch )
+{
+    int i, conta;
+    for(i=conta=0; str[i]!='\0';i++)
+        {
+            if(str[i]==ch)
+                conta++;
+    
+        }return conta;
+}
+int
+main ()
+{
+  char *nome = "Andre es cubano de nacimento";
+  int i, len, j;
+  len=strlen(nome);
+  
+  printf ("Hello World\n\t");
+  printf ("primeiro caracter: %c\n\t", nome[0]);
+  j=strlen(nome)-strcountc(nome,' ');
+  printf ("a string tem um total de %2d caracteres\n\t", len);
+  printf("o numero de caracteres reais da string e %d\n\t",j );
+  funcionDesmenbrar(nome);
+  
+  
+
+  return 0;
+}
